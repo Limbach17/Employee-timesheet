@@ -150,13 +150,13 @@ function writeEmployee() {
 
     var tdMonthlyRate = $("<td>");
 
-    tdMonthlyRate.text(rate);
+    tdMonthlyRate.text(parseInt(rate));
 
 
 
     var tdTotalBilled = $("<td>");
 
-    var total = rate * tdMonthsWorked;
+    var total = parseInt(rate) * mons;
 
     tdTotalBilled.text(total);
 
@@ -181,5 +181,3 @@ function writeEmployee() {
 
 
 }
-
-
