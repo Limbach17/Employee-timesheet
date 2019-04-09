@@ -60,8 +60,6 @@ function GetMonths() {
 
     var tempDate = new Date(startDate);
 
-
-
     var tempNow = Date.now();
 
     var diff = new Date(tempNow - tempDate);
@@ -71,26 +69,6 @@ function GetMonths() {
     console.log(tempMonths);
 
     return tempMonths;
-
-}
-
-function monthDiff(d1, d2) {
-
-    var months;
-
-    d1 = new Date(d1);
-
-    console.log(d1);
-
-    console.log(new Date(Date.now()).getFullYear());
-
-    months = (d2.getFullYear() - d1.getFullYear()) * 12;
-
-    months -= d1.getMonth() + 1;
-
-    months += d2.getMonth();
-
-    return months <= 0 ? 0 : months;
 
 }
 
@@ -105,10 +83,6 @@ function SubmitHandler(event) {
     ReadInfo();
 
     writeEmployee();
-
-
-
-
 
 
 
@@ -168,11 +142,7 @@ function writeEmployee() {
 
     var tdMonthsWorked = $("<td>");
 
-    
-
-    
-
-    var mons = monthDiff(startDate, Date.now());
+    var mons = GetMonths();
 
     tdMonthsWorked.text(mons);
 
