@@ -1,0 +1,135 @@
+<!-- Step 1: Create the Layout. -->
+<!-- Step 2: Flag key sections with specific id names. These will be replaced by JavaScript -->
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+    <meta charset='UTF-8'>
+    <title>Sickest Newsfinder Evar!</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+    h1 {
+        font-family: 'Indie Flower';
+        font-weight: bold;
+        font-size: 3em;
+    }
+    .title{
+        font-size: 22px;
+        font-weight: bold;
+     }
+    .author{
+        font-size: 16px;
+        margin-left: 50px;
+    }
+
+    .badge{
+        font-size: 22px;
+        margin-right: 10px;
+        background-color: #f1f1f1;
+    }
+
+    
+
+    
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- Bootstrap Container will hold everything. -->
+    <div class="container">
+
+        <!-- Jumbotron holds the title section. -->
+        <div class='jumbotron'>
+            <div class='container'>
+                <h1 class="text-center"><i class="far fa-newspaper"></i> Employee Timesheets!</h1>
+                <hr>
+                <p class="text-center"><small><i class="far fa-keyboard"></i>  add employee information below</small></p>
+            </div>
+        </div>
+
+        <!-- Game counters held here. cards are being used to hold various sections. -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- First card: Holds the Word to Guess (blanks and guessed word). -->
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h3 class="card-title"><i class="fas fa-user-plus"></i><strong> Add Employee</strong></h3>
+                    </div>
+
+                    <div class="card-body">
+
+                        <form>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput"><i class="fas fa-address-card"></i> <strong>Employee Name:</strong></label>
+                                <input type="text" class="form-control" id="term"
+                                    placeholder="Person's name...">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="formGroupExampleInput2"><i class="fas fa-address-book"></i> <strong>Role</strong></label>
+                                <input type="text" class="form-control" id="articleNum"
+                                    placeholder="Job Title...">
+                            </div>
+                            
+                            <div class="form-group">
+                                    <label for="formGroupExampleInput3"><i class="fas fa-calendar-check"></i> <strong>Start Date:</strong></label>
+                                    <input type="text" class="form-control" id="startYear"
+                                        placeholder="mm/dd/yyyy...">
+                            </div>
+                            
+                            <div class="form-group">
+                                    <label for="formGroupExampleInput4"><i class="fas fa-calendar-times"></i> <strong>End Year:</strong></label>
+                                    <input type="text" class="form-control" id="endYear"
+                                        placeholder="mm/dd/yyyy...">
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-outline-dark" id="submit"><i class="fa fa-search"></i> SUBMIT</button>
+                            
+                        </form>
+                        <br>
+                    </div>
+
+                </div>
+                <br><hr><br>
+                <!-- Results -->
+                <div class="card card-default">
+                        <div class="card-header">
+                            <h3 class="card-title"><strong><i class="fas fa-users"></i>  Current Employees</strong></h3>
+                        </div>
+    
+                        <div class="card-body">
+                            <div id="container">
+                                <div id="results"></div>
+                            </div>
+                            
+                        </div>
+    
+                    </div>
+                    <br><br>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Adds a link to the JavaScript file. Loaded at the bottom so it waits for the HTML content to display first. If you put this at the top it will crash, because the HTML IDs won"t exist yet.-->
+    <script src="assets/javascript/app.js"></script>
+    
+
+
+</body>
+
+</html>
