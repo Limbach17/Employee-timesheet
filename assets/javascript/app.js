@@ -20,7 +20,7 @@ $(document).ready()
 
     $("#submit").click(SubmitHandler);
 
-    console.log(Date.now());
+    
 
 }
 
@@ -51,6 +51,26 @@ firebase.initializeApp(config);
 
 
 var database = firebase.database();
+
+
+
+function GetMonths() {
+
+  
+
+    var tempDate = new Date(startDate);
+
+    var tempNow = Date.now();
+
+    var diff = new Date(tempNow - tempDate);
+
+    var tempMonths = diff.getUTCMonth();
+
+    console.log(tempMonths);
+
+    return tempMonths;
+
+}
 
 
 
@@ -122,9 +142,9 @@ function writeEmployee() {
 
     var tdMonthsWorked = $("<td>");
 
+    var mons = GetMonths();
 
-
-    tdMonthsWorked.text("");
+    tdMonthsWorked.text(mons);
 
 
 
@@ -148,6 +168,8 @@ function writeEmployee() {
 
     employee.append(tdStartDate);
 
+    employee.append(tdMonthsWorked);
+
     employee.append(tdMonthlyRate);
 
     employee.append(tdTotalBilled);
@@ -159,4 +181,5 @@ function writeEmployee() {
 
 
 }
+
 
