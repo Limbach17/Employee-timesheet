@@ -1,4 +1,7 @@
 
+
+
+
 var person;
 var role;
 var startDate;
@@ -60,8 +63,9 @@ function writeEmployee() {
     var tdStartDate = $("<td>");
     tdStartDate.text(startDate);
     var tdMonthsWorked = $("<td>");
-   //  var mons = GetMonths();
-   
+ 
+    var mons = GetMonths(startDate);
+
     tdMonthsWorked.text(mons);
     var tdMonthlyRate = $("<td>");
     tdMonthlyRate.text(parseInt(rate));
@@ -95,14 +99,10 @@ function writeEmployee() {
 
 
 
-function GetMonths() {
-
-    var tempDate = new Date(startDate);
-    var tempNow = Date.now();
-    var diff = new Date(tempNow - tempDate);
-    var tempMonths = diff.getUTCMonth();
-    console.log(tempMonths);
-
-    return tempMonths;
+function GetMonths(start) {
+    var now = moment();
+   console.log("Start Date: " + start);
+    console.log("Now: "+ now);
+   
 
 }
